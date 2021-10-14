@@ -13,7 +13,7 @@ public class MoodAnalyser {
     }
     public static void main(String[] args) {
         System.out.println("Welcome to Mood Analyser");
-        String message ="i am sad";
+        String message ="i am Happy";
         System.out.println(analyseMood(message));
     }
 }
