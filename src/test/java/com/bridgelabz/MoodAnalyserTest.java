@@ -1,7 +1,6 @@
 package com.bridgelabz;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -10,24 +9,12 @@ import org.junit.Test;
  */
 public class MoodAnalyserTest
 {
-    MoodAnalyser moodAnalyser = null;
-
-    @Before
-    public void objectCreation()
-    {
-        moodAnalyser = new MoodAnalyser();
-    }
     @Test
     public void iAmIn_SadMood_ShouldReturn_sad()
     {
-        String mood = moodAnalyser.analyseMood("I am in sad mood");
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in sad mood");
+        String mood = moodAnalyser.analyseMood();
         Assert.assertEquals("sad" , mood);
     }
 
-    @Test
-    public void iAmIn_AnyMood_ShouldReturn_Happy()
-    {
-        String mood = moodAnalyser.analyseMood("I am in any mood");
-        Assert.assertEquals("Happy" , mood);
-    }
 }
