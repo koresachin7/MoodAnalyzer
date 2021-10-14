@@ -4,16 +4,26 @@ package com.bridgelabz;
  * @author - Sachin Kore
  * @version - 16.0
  */
-public class MoodAnalyser {
-    public static String analyseMood(String message) {
-        if (message.contains("sad"))
+public class MoodAnalyser
+{
+    private String message;
+
+    public MoodAnalyser(String message)
+    {
+        this.message = message;
+    }
+
+    public String analyseMood(String message)
+    {
+
+        if(message.contains("sad"))
             return "sad";
         else
             return "Happy";
     }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Mood Analyser");
-        String message ="i am Happy";
-        System.out.println(analyseMood(message));
+
     }
 }

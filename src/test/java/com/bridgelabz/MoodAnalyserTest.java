@@ -1,33 +1,33 @@
 package com.bridgelabz;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Purpose - To perform mood analyser test cases
  * @author - Sachin Kore
  */
-public class MoodAnalyserTest {
-    MoodAnalyser moodAnalyser = new MoodAnalyser();
+public class MoodAnalyserTest
+{
+    MoodAnalyser moodAnalyser = null;
 
-    //Method to test if the mood is sad
+    @Before
+    public void objectCreation()
+    {
+        moodAnalyser = new MoodAnalyser();
+    }
     @Test
-    public void whenTestedMood_ifIamInSadMood_shouldReturnSad() {
-        String mood = moodAnalyser.analyseMood("I am in sad Mood");
-        Assert.assertEquals("sad",mood);
+    public void iAmIn_SadMood_ShouldReturn_sad()
+    {
+        String mood = moodAnalyser.analyseMood("I am in sad mood");
+        Assert.assertEquals("sad" , mood);
     }
 
-    //Method to test if the mood is happy
     @Test
-    public void whenTestedMood_ifHappy_shouldReturnHappy() {
-        String mood = moodAnalyser.analyseMood("Happy Days");
-        Assert.assertEquals("Happy",mood);
-    }
-
-    //Method to test if the no mood is given
-    @Test
-    public void whenTestedMood_ifNotInAnyMood_shouldReturnHappy() {
-        String mood = moodAnalyser.analyseMood("I am not in a mood");
-        Assert.assertEquals("Happy",mood);
+    public void iAmIn_AnyMood_ShouldReturn_Happy()
+    {
+        String mood = moodAnalyser.analyseMood("I am in any mood");
+        Assert.assertEquals("Happy" , mood);
     }
 }
